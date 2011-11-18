@@ -10,4 +10,11 @@ class PathPatternSpec extends Specification {
       pattern.toString must be ("/simple/path")
     }
   }
+
+  "A splat in a path" should {
+    "match  anything" in {
+      val pattern = parseFrom("/splat/path/*")
+      pattern.toString must be ("/splat/path/.*?")
+    }
+  }
 }

@@ -10,6 +10,6 @@ object PathPatternParser extends RegexParsers {
       case Success(tokens, _) => tokens
       case _ => throw new IllegalArgumentException("Invalid path pattern: " + path)
     }
-    (tokens.r, List())
+    tokens.r
   }
 }
